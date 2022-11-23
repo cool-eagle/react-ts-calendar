@@ -14,7 +14,7 @@ function App() {
   return (
     <div className='pt-40 flex justify-around items-center'>
       <Calendar selectedDate={updatedDate} onSelectDate={onClickWhen} />
-      <div className='w-[300px] border-2 rounded-md border-blue p-4'>
+      <div className='w-[300px] border-2 rounded-md border-blue p-1'>
         <input
           type="date"
           value={format(updatedDate, 'yyyy-MM-dd')}

@@ -14,7 +14,7 @@ const Calendar = ({ selectedDate, onSelectDate }: Props) => {
   useEffect(() => {
     setActiveDate(selectedDate);
   }, [selectedDate]);
-  
+
   const getHeader = () => {
     return (
       <div className='flex flex-row p-3 w-full items-center justify-between bg-rouge-blue'>
@@ -95,7 +95,7 @@ const Calendar = ({ selectedDate, onSelectDate }: Props) => {
       currentDate = addDays(currentDate, 7);
     }
 
-    return <div className='flex flex-col w-full'>{allWeeks}</div>;
+    return <div className='flex flex-col w-full bg-white'>{allWeeks}</div>;
   };
 
   return (
