@@ -8,8 +8,6 @@ interface Props {
 }
 const Calendar = ({ selectedDate, onSelectDate }: Props) => {
   const [activeDate, setActiveDate] = useState(selectedDate);
-  console.log("activeDate: ", activeDate);
-  console.log("selectedDate: ", selectedDate);
 
   useEffect(() => {
     setActiveDate(selectedDate);
