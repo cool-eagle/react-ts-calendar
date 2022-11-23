@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { format, subMonths, addMonths, startOfWeek, addDays, isSameDay, startOfMonth, endOfMonth, endOfWeek, isSameMonth } from 'date-fns';
 import { NextSvg, PreviousSvg } from '../assets';
 
@@ -7,7 +7,14 @@ interface Props {
   onSelectDate: (selectedDate: Date) => void;
 }
 const Calendar = ({ selectedDate, onSelectDate }: Props) => {
-  const [activeDate, setActiveDate] = useState(new Date());
+  const [activeDate, setActiveDate] = useState(selectedDate);
+  console.log("activeDate: ", activeDate);
+  console.log("selectedDate: ", selectedDate);
+
+  useEffect(() => {
+    setActiveDate(selectedDate);
+  }, [selectedDate]);
+  
   const getHeader = () => {
     return (
       <div className='flex flex-row p-3 w-full items-center justify-between bg-rouge-blue'>
@@ -92,7 +99,7 @@ const Calendar = ({ selectedDate, onSelectDate }: Props) => {
   };
 
   return (
-    <section className='w-full'>
+    <section className='w-[300px]'>
       {getHeader()}
       {getWeekDaysNames()}
       {getDates()}
